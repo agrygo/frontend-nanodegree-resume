@@ -73,7 +73,7 @@ p {
 }
 
 a {
-  color: #1199C3;
+  color: #008B8B;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -100,8 +100,8 @@ a {
 }
 
 .white-text {
-  font-weight: bold;
-  color: #FFFFFF;
+  font-weight: normal;
+  color: #E5E4E4;
 }
 
 .gray {
@@ -164,6 +164,7 @@ img {
 
 span {
   padding: 5px;
+  color: #008B8B;
 }
 
 #letsConnect {
