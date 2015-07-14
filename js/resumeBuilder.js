@@ -1,5 +1,3 @@
-
-
 var work = {
 	"jobs":[
 		{
@@ -223,3 +221,7 @@ function inName(name) {
 $('#main').append(internationalizeButton);
 
 $('#mapDiv').append(googleMap);
+
+$('#letsConnect').click(function(){
+		window.location = "https://twitter.com/agrygo"
+});

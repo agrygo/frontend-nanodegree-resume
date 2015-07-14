@@ -15,7 +15,7 @@
 
 h1 {
   font-size: 40px;
-  color: #F5A623;
+  color: #00D7D7;
   line-height: 48px;
   display: inline;
 }
@@ -87,7 +87,7 @@ a {
 }
 
 #skillsH3 {
-  color: #F5AE23;
+  color: #00D7D7;
   display: none;
 }
 
@@ -97,6 +97,10 @@ a {
 
 .orange-text {
   color: #F5AE23;
+}
+
+.blue-text {
+  color: #00D7D7
 }
 
 .white-text {
@@ -142,7 +146,7 @@ ul {
 .biopic {
   float: left;
   padding: 10px;
-  width: 200px;
+  width: 387px;
   display: none;
 }
 
@@ -164,12 +168,18 @@ img {
 
 span {
   padding: 5px;
-  color: #008B8B;
+  color: #F5AE23;
 }
 
 #letsConnect {
   text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  color: #999999;
+  line-height: 29px;
+  padding: 10px;
 }
+
 
 @media only screen and (max-width: 1024px) {
   #letsConnect {
@@ -179,7 +189,7 @@ span {
 
 @media only screen and (max-width:900px) {
   .biopic {
-    width: 175px;
+    width: 387px;
   }
 }
 
@@ -195,17 +205,15 @@ span {
   }
 }
 
-#map {
-  display: block;
-  height: 100%;
-  margin-left: 5%;
-  margin-right: 5%;
-}
 
 #mapDiv {
-  height: 400px;
-  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 200px;
+  width: 50%;
   padding-bottom: 5%;
+  padding-top: 10px;
 }
 
 @media only screen and (min-width: 750px) {
