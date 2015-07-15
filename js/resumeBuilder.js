@@ -1,3 +1,28 @@
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+
+$('#header').prepend(formattedRole);
+$('#header').prepend(formattedName);
+$('#main').append(bio.name);
+$('#main').append(work.title);
+$('#main').append(education.name);
+
+var bio = {
+	"name": "Andrea Grygo",
+	"role": "GIS Web Developer",
+	"contacts": {
+		"mobile": "218-340-7657",
+		"email": "andreagrygo@gmail.com",
+		"twitter": "@agrygo",
+		"github": "agrygo",
+		"linkedin": "https://www.linkedin.com/pub/andrea-grygo/12/875/50",
+		"location": "Colorado"
+	},
+	"welcomeMessage": "Thanks for checking",
+	"skills":  ["GIS", "JavaScript", "manifesting greatness"],
+	"photo": "images/ag.jpg"
+};
+
 var work = {
 	"jobs":[
 		{
@@ -39,78 +64,6 @@ var projects = {
 		}]
 	}
 
-
-projects.display = function(){
-
-	for (project in projects.projects){
-		$('#projects').append(HTMLprojectStart);
-
-		var formattedProjTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-		$(".project-entry:last").append(
-			formattedProjTitle);
-		var formattedProjDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-		$(".project-entry:last").append(
-			formattedProjDates);
-		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-		$(".project-entry:last").append(
-			formattedDescription);
-
-		if (projects.projects[project].images.length > 0){
-			for (image in projects.projects[project].images){
-				var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-				$(".project-entry:last").append(formattedImage);
-				}
-			}
-		}
-	}
-
-
-
-var bio = {
-	"name": "Andrea Grygo",
-	"role": "GIS Web Developer",
-	"contacts": {
-		"mobile": "218-340-7657",
-		"email": "andreagrygo@gmail.com",
-		"twitter": "@agrygo",
-		"github": "agrygo",
-		"linkedin": "https://www.linkedin.com/pub/andrea-grygo/12/875/50",
-		"location": "Colorado"
-	},
-	"welcomeMessage": "Thanks for checking",
-	"skills":  ["GIS", "JavaScript", "manifesting greatness"],
-	"photo": "images/ag.jpg"
-};
-
-bio.display = function(){
-	//for (contact in bio.contacts){
-		//$('#topContacts').append(HTMLcontactGeneric);
-
-		var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-		$('#topContacts').append(formattedMobile);
-		var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-		$('#topContacts').append(formattedEmail);
-		var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-		$('#topContacts').append(formattedTwitter);
-		var formattedGit = HTMLgithub.replace("%data%", bio.contacts.github);
-		$('#topContacts').append(formattedGit);
-		var formattedLoc = HTMLlocation.replace("%data%", bio.contacts.location);
-		$('#topContacts').append(formattedLoc);
-		var formattedPic = HTMLbioPic.replace("%data%", bio.photo);
-		$('#topContacts').append(formattedPic);
-		var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-		$('#topContacts').append(formattedWelcome);
-		$("#topContacts").append(HTMLskillsStart);
-	for (skill in bio.skills)	{
-
-
-		var formattedSkills = HTMLskills.replace("%data%", bio.skills[skill]);
-		$('#topContacts').append(formattedSkills);
-	}
-	//}
-
-}
-
 var education = {
 	"schools":[
 		{
@@ -146,40 +99,36 @@ var education = {
 		}]
 }
 
-education.display = function(){
+bio.display = function(){
+	//for (contact in bio.contacts){
+		//$('#topContacts').append(HTMLcontactGeneric);
 
-	for (school in education.schools){
-		$('#education').append(HTMLschoolStart);
+		var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+		$('#topContacts').append(formattedMobile);
+		var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+		$('#topContacts').append(formattedEmail);
+		var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+		$('#topContacts').append(formattedTwitter);
+		var formattedGit = HTMLgithub.replace("%data%", bio.contacts.github);
+		$('#topContacts').append(formattedGit);
+		var formattedLoc = HTMLlocation.replace("%data%", bio.contacts.location);
+		$('#topContacts').append(formattedLoc);
+		var formattedPic = HTMLbioPic.replace("%data%", bio.photo);
+		$('#topContacts').append(formattedPic);
+		var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+		$('#topContacts').append(formattedWelcome);
+		$("#topContacts").append(HTMLskillsStart);
+	for (skill in bio.skills)	{
 
-		var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
-		$(".education-entry:last").append(
-			formattedSchoolName);
-		var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
-		$(".education-entry:last").append(
-			formattedSchoolDegree);
-		var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
-		$(".education-entry:last").append(
-			formattedSchoolDates);
-		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
-		$(".education-entry:last").append(
-			formattedSchoolLocation);
-		var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
-		$(".education-entry:last").append(
-			formattedSchoolMajor);
 
-		}
+		var formattedSkills = HTMLskills.replace("%data%", bio.skills[skill]);
+		$('#topContacts').append(formattedSkills);
 	}
+	//}
 
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+}
 
-$('#header').prepend(formattedRole);
-$('#header').prepend(formattedName);
-$('#main').append(bio.name);
-$('#main').append(work.title);
-$('#main').append(education.name);
-
-function displayWork() {
+work.display = function() {
 	for (job in work.jobs){
 		$("#workExperience").append(HTMLworkStart);
 
@@ -198,16 +147,61 @@ function displayWork() {
 			formattedDate);
 		$(".work-entry:last").append(
 			formattedDescription);
-
 	}
 }
 
-displayWork();
+projects.display = function(){
+
+	for (project in projects.projects){
+		$('#projects').append(HTMLprojectStart);
+
+		var formattedProjTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+		$(".project-entry:last").append(
+			formattedProjTitle);
+		var formattedProjDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+		$(".project-entry:last").append(
+			formattedProjDates);
+		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+		$(".project-entry:last").append(
+			formattedDescription);
+
+		if (projects.projects[project].images.length > 0){
+			for (image in projects.projects[project].images){
+				var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+				$(".project-entry:last").append(formattedImage);
+			}
+		}
+	}
+}
+
+education.display = function(){
+	for (school in education.schools){
+		$('#education').append(HTMLschoolStart);
+
+		var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+		$(".education-entry:last").append(
+			formattedSchoolName);
+		var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+		$(".education-entry:last").append(
+			formattedSchoolDegree);
+		var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+		$(".education-entry:last").append(
+			formattedSchoolDates);
+		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+		$(".education-entry:last").append(
+			formattedSchoolLocation);
+		var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+		$(".education-entry:last").append(
+			formattedSchoolMajor);
+	}
+}
+
+bio.display();
+work.display();
 projects.display();
 education.display();
-bio.display();
 
-
+//internationalize button
 function inName(name) {
 	var names = [];
 	console.log(name);
@@ -217,11 +211,11 @@ function inName(name) {
 	return names[0] + " " + names[1];
 }
 
-
 $('#main').append(internationalizeButton);
 
 $('#mapDiv').append(googleMap);
 
-$('#letsConnect').click(function(){
+//alternate Twitter follow
+/*$('#letsConnect').click(function(){
 		window.location = "https://twitter.com/agrygo"
-});
+});*/
